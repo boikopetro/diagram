@@ -1,0 +1,47 @@
+body{
+    background-color: rgba(216, 216, 211, 0.856) 
+}
+.container{
+    width: 950px;
+    position:relative;
+}
+.groups {
+    position:absolute;
+    top:0;
+    left:0;
+    width:200px;
+    background-color: rgb(196, 191, 191);
+}
+li {
+    padding: 10px;
+    list-style-type: none;
+}
+li:before {
+    content: "►"; 
+}
+td{
+    padding:  5px;
+    border: 1px solid black;
+}
+table
+ {
+    border-collapse: collapse;
+    position:absolute;
+    top:15px;
+    right:0;
+    width: 700px;
+    border: 3px solid black;
+}
+
+.diagram{
+    position:absolute;
+    top:10px;
+    left:10px;
+    width:500px;
+    height:500px;
+    margin-left:1000px;
+}
+button{
+    position:absolute;
+    right: 0;
+}
