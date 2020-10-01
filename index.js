@@ -1,8 +1,8 @@
-
+const randomArray = [];
 //start of diagram
-var ctx = document.getElementById('myChart').getContext('2d');
+const ctx = document.getElementById('myChart').getContext('2d');
 
-var chart = new Chart(ctx, {
+const chart = new Chart(ctx, {
     // The type of chart we want to create
     type: 'bar',
 
@@ -13,7 +13,7 @@ var chart = new Chart(ctx, {
             label: 'Вибрана позинія',
             backgroundColor: 'rgb(67, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
-            data: [32, 15, 55, 22, 20, 30, 45, 36, 29, 47, 33, 56]
+            data: randomArray
         }]
     },
 
@@ -42,7 +42,7 @@ var chart = new Chart(ctx, {
 document.getElementById('btn').addEventListener('click',showDiv);
 let display = true;
 function showDiv () {
-    let isShow = document.getElementById('diagram')   ;
+    const isShow = document.getElementById('diagram')   ;
     if(display) {
         isShow.style.display = 'block';
         display = false;
@@ -50,4 +50,18 @@ function showDiv () {
         isShow.style.display = 'none';
         display = true;
     }
+}
+
+//random array
+document.getElementById('btn').onclick = function(){
+    const min = 0;
+    const max = document.querySelector('.max').value;
+    for(let i = 0; i < 12; i++) {
+    randomArray.push(randomInteger(min, max))
+    } 
+}
+
+function randomInteger(min, max) {
+  const rand = min + Math.random() * (max  - min);
+  return Math.floor(rand);
 }
