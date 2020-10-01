@@ -36,6 +36,18 @@ var chart = new Chart(ctx, {
         }
     }
 });
-
 //end of diagram
 
+// show/hide button
+document.getElementById('btn').addEventListener('click',showDiv);
+let display = true;
+function showDiv () {
+    let isShow = document.getElementById('diagram')   ;
+    if(display) {
+        isShow.style.display = 'block';
+        display = false;
+    } else {
+        isShow.style.display = 'none';
+        display = true;
+    }
+}
