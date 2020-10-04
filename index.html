@@ -8,7 +8,8 @@
 </head>
 <body>
 <header>
-    <button id="btn">Графік</button>
+    <button id="auto_ordering">Автозамовлення</button>
+    <button id="diagram_btn">Графік</button>
 </header>
 <div class="container">
 <aside>
@@ -21,46 +22,47 @@
     </ul>
 </aside>
 <main>
+    <div class="table">
     <table>
         <tr>
             <td>Назва товару</td>
             <td>Залишок ЦС</td>
             <td>Залишок філія</td>
-            <td>Попит мережа</td>
-            <td>Попит філія</td>
+            <td>Min:</td>
+            <td>Max:</td>
         </tr>
         <tr>
             <td>Коліно 20</td>
             <td><input type="number" value="350"></td>
-            <td><input class="max" type="number" value=100></td>
-            <td>АА</td>
-            <td>АА</td>
+            <td><input class="diagramMax" type="number" value=100></td>
+            <td><input class="min" type="number" value="50"></td>
+            <td><input class="max" type="number" value="200"></td>
         </tr>
             <td>Муфта 20 90</td>
             <td><input type="number"></td>
             <td><input type="number"></td>
-            <td>АА</td>
-            <td>АА</td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
         <tr>
             <td>Трійник 20</td>
             <td><input type="number"></td>
             <td><input type="number"></td>
-            <td>АА</td>
-            <td>АА</td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
         </tr>
         <tr>
             <td>Труба 20 скловолокно</td>
             <td><input type="number"></td>
             <td><input type="number"></td>
-            <td>АА</td>
-            <td>АА</td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
         </tr>
-        
     </table>
+    <button class="autoOrderingBtn">Зберегти</button>
+    </div>
 </main>
 </div>
-<div id="diagram">
-    
+<div class="diagram">
     <canvas id="myChart"></canvas>  
 </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>

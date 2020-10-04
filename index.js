@@ -39,23 +39,23 @@ const chart = new Chart(ctx, {
 //end of diagram
 
 // show/hide button
-document.getElementById('btn').addEventListener('click',showDiv);
-let display = true;
-function showDiv () {
-    const isShow = document.getElementById('diagram')   ;
-    if(display) {
-        isShow.style.display = 'block';
-        display = false;
+document.getElementById('diagram_btn').addEventListener('click',showDiagram);
+let diagramDisplay = true;
+function showDiagram () {
+    const showHideDiagram = document.querySelector('.diagram');
+    if(diagramDisplay) {
+        showHideDiagram.style.display = 'block';
+        diagramDisplay = false;
     } else {
-        isShow.style.display = 'none';
-        display = true;
+        showHideDiagram.style.display = 'none';
+        diagramDisplay = true;
     }
 }
 
 //random array
-document.getElementById('btn').onclick = function(){
+document.getElementById('diagram_btn').onclick = function(){
     const min = 0;
-    const max = document.querySelector('.max').value;
+    const max = document.querySelector('.diagramMax').value;
     for(let i = 0; i < 12; i++) {
     randomArray.push(randomInteger(min, max))
     } 
@@ -64,4 +64,20 @@ document.getElementById('btn').onclick = function(){
 function randomInteger(min, max) {
   const rand = min + Math.random() * (max  - min);
   return Math.floor(rand);
+}
+
+// auto ordering
+
+document.getElementById('auto_ordering').addEventListener('click',showAutoOrdering);
+let autoOrderingDisplay = true;
+function showAutoOrdering () {
+   const showHideAutoOrdering = document.querySelector('.table');
+   if(autoOrderingDisplay) {
+        showHideAutoOrdering.style.display = 'none'
+        autoOrderingDisplay = false;
+   } else {
+        showHideAutoOrdering.style.display = 'block'
+        autoOrderingDisplay = true;
+   }
+
 }

@@ -1,7 +1,7 @@
-body{
+body {
     background-color: rgba(216, 216, 211, 0.856) 
 }
-.container{
+.container {
     width: 950px;
     position:relative;
 }
@@ -19,23 +19,31 @@ li {
 li:before {
     content: "►"; 
 }
-td{
+td {
     padding:  5px;
     border: 1px solid black;
 }
-table
- {
+table {
+    margin: 2px;
     border-collapse: collapse;
-    position:absolute;
-    top:15px;
-    right:0;
-    width: 700px;
-    border: 3px solid black;
 }
 
-#diagram{
+.table {
+    border: 2px solid rgb(31, 29, 29);
+    border-radius: 2px;
+    position:absolute;
+    top:17px;
+    left:250px;
+}
+.table button {
+    margin: 5px;
+    margin-left: 465px;
+    
+}
+
+.diagram {
     display: none;
-    border: 2px solid black;
+    border: 2px solid rgb(31, 29, 29);
     border-radius: 4px;
     position:absolute;
     top:10px;
@@ -44,9 +52,8 @@ table
     height:250px;
     margin-left:1000px;
 }
-#btn{
-    z-index: 1;
-    position:absolute;
-    right: 0;
-    margin: 20px 40px;
+
+input {
+    width: 70px;
 }
+
