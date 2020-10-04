@@ -34,6 +34,7 @@ table {
     position:absolute;
     top:17px;
     left:250px;
+    display: none;
 }
 .table button {
     margin: 5px;

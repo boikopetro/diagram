@@ -54,8 +54,8 @@ function showDiagram () {
 
 //random array
 document.getElementById('diagram_btn').onclick = function(){
-    const min = 0;
     const max = document.querySelector('.diagramMax').value;
+    const min = max * 0.5;
     for(let i = 0; i < 12; i++) {
     randomArray.push(randomInteger(min, max))
     } 
@@ -73,10 +73,10 @@ let autoOrderingDisplay = true;
 function showAutoOrdering () {
    const showHideAutoOrdering = document.querySelector('.table');
    if(autoOrderingDisplay) {
-        showHideAutoOrdering.style.display = 'none'
+        showHideAutoOrdering.style.display = 'block'
         autoOrderingDisplay = false;
    } else {
-        showHideAutoOrdering.style.display = 'block'
+        showHideAutoOrdering.style.display = 'none'
         autoOrderingDisplay = true;
    }
 
