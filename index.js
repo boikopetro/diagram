@@ -1,5 +1,6 @@
 const randomArray = [];
-//start of diagram
+
+// start of diagram
 const ctx = document.getElementById('myChart').getContext('2d');
 
 const chart = new Chart(ctx, {
@@ -36,9 +37,9 @@ const chart = new Chart(ctx, {
         }
     }
 });
-//end of diagram
+// end of diagram
 
-// show/hide button
+// show/hide diagram button
 document.getElementById('diagram_btn').addEventListener('click',showDiagram);
 let diagramDisplay = true;
 function showDiagram () {
@@ -52,9 +53,10 @@ function showDiagram () {
     }
 }
 
-//random array
-document.getElementById('diagram_btn').onclick = function(){
-    const max = document.querySelector('.diagramMax').value;
+// random array
+document.getElementById('diagram_btn').addEventListener('click', diagramValues) 
+function diagramValues (){
+    const max = document.querySelector('.remainder').value;
     const min = max * 0.5;
     for(let i = 0; i < 12; i++) {
     randomArray.push(randomInteger(min, max))
@@ -67,7 +69,6 @@ function randomInteger(min, max) {
 }
 
 // auto ordering
-
 document.getElementById('auto_ordering').addEventListener('click',showAutoOrdering);
 let autoOrderingDisplay = true;
 function showAutoOrdering () {
@@ -79,5 +80,38 @@ function showAutoOrdering () {
         showHideAutoOrdering.style.display = 'none'
         autoOrderingDisplay = true;
    }
+}
 
+// order_done window
+document.getElementById('order_done_btn').addEventListener('click', ordered);
+let orderedDisplay = true;
+function ordered () {
+    const showHideOrderDone = document.querySelector('.order_done');
+    if(orderedDisplay) {
+        showHideOrderDone.style.display = 'block'
+        orderedDisplay = false;
+    } else {
+        showHideOrderDone.style.display = 'none'
+        orderedDisplay = true;
+    }
+}
+
+// order counter
+document.getElementById('order_done_btn').addEventListener('click', orderCounter);
+function orderCounter () {
+    const minValue = document.querySelector('.min').value;
+    const maxValue = document.querySelector('.max').value;
+    const remainderValue = document.querySelector('.remainder').value;
+    const storageRemainderValue = document.querySelector('.storageRemainder').value;
+    const orderedValue = document.querySelector('.orderedPosition');
+    const toOrder = maxValue - remainderValue;
+    if (remainderValue < minValue) {
+        orderedValue.innerHTML = toOrder;
+        }
+    if (toOrder > storageRemainderValue) {
+        orderedValue.innerHTML = storageRemainderValue;
+    }
+    if (storageRemainderValue <= 10) {
+        orderedValue.innerHTML = 'де товар???'
+    }
 }

@@ -58,3 +58,11 @@ input {
     width: 70px;
 }
 
+.order_done {
+    position: absolute;
+    top: 300px;
+    display: none;
+    border: 2px solid rgb(31, 29, 29);
+    border-radius: 2px;
+    padding: 5px;
+}
