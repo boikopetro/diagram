@@ -83,18 +83,32 @@ function showAutoOrdering () {
 }
 
 // order_done window
-document.getElementById('order_done_btn').addEventListener('click', ordered);
+
+document.getElementById('order_done_btn').addEventListener('click', timer);
 let orderedDisplay = true;
+const showHideOrderDone = document.querySelector('.order_done');
 function ordered () {
-    const showHideOrderDone = document.querySelector('.order_done');
     if(orderedDisplay) {
         showHideOrderDone.style.display = 'block'
         orderedDisplay = false;
-    } else {
+    } 
+}
+
+document.getElementById('close_window').addEventListener('click', closeWindow)
+function closeWindow () {
+    if(orderedDisplay===false) {
         showHideOrderDone.style.display = 'none'
         orderedDisplay = true;
+        timer()
     }
 }
+
+function timer () {
+    alert('Збережено!')
+    return setTimeout(ordered, 5000)
+}
+
+
 
 // order counter
 document.getElementById('order_done_btn').addEventListener('click', orderCounter);
@@ -115,3 +129,4 @@ function orderCounter () {
         orderedValue.innerHTML = 'де товар???'
     }
 }
+
