@@ -13,16 +13,16 @@
 </header>
 <div class="container">
 <aside>
-    <ul class="groups">
-        <li><a href="">Лампочки</a></li>
-        <li><a href="">Прожектори</a></li>
-        <li><a href="">Запчастини ПП</a></li>
-        <li><a href="">Шланги вода/газ</a></li>
-        <li><a href="">Фільтри</a></li>
+    <ul class="groups style">
+        <li>Лампочки</li>
+        <li>Прожектори</li>
+        <li>Запчастини ПП</li>
+        <li>Шланги вода/газ</li>
+        <li>Фільтри</li>
     </ul>
 </aside>
 <main>
-    <div class="table">
+    <div class="storage style">
     <table>
         <tr>
             <td>Назва товару</td>
@@ -57,13 +57,12 @@
             <td><input type="number"></td>
             <td><input type="number"></td>
         </tr>
+        <button id="order_done_btn" class="btn">Зберегти</button>
     </table>
-    <button id="order_done_btn">Зберегти</button>
     </div>
 </main>
 </div>
-
-<div class="order_done">
+<div class="order_done style">
     <table>
         <tr>
             <td>Назва товару</td>
@@ -90,12 +89,10 @@
             <td>...</td>
             <td>AA</td>
         </tr>
+        <button id="close_window" class="btn">Закрити</button>
     </table>
-    <button id="close_window">Закрити</button>
 </div>
-
-
-<div class="diagram">
+<div class="diagram style">
     <canvas id="myChart"></canvas>  
 </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>

@@ -1,70 +1,65 @@
 body {
-    background-color: rgba(216, 216, 211, 0.856) 
+    background-image: url(images/background.jpg);
+    background-size: cover;
+}
+header {
+    position: relative;
+    top: 55px;
+    left: 580px;
+}
+header button {
+    height: 30px;
 }
 .container {
+    position: relative;
     width: 950px;
-    position:relative;
 }
 .groups {
-    position:absolute;
-    top:0;
+    top:75px;
     left:0;
     width:200px;
-    background-color: rgb(196, 191, 191);
 }
-li {
+.groups li {
     padding: 10px;
     list-style-type: none;
 }
-li:before {
+.groups li:before {
     content: "►"; 
 }
-td {
-    padding:  5px;
-    border: 1px solid black;
-}
 table {
-    margin: 2px;
+    margin: 5px;
     border-collapse: collapse;
 }
-
-.table {
-    border: 2px solid rgb(31, 29, 29);
-    border-radius: 2px;
-    position:absolute;
-    top:17px;
+td {
+    padding: 5px;
+    border: 1px solid black;
+}
+.btn {
+    color: blue;
+}
+.storage {
+    display: none; 
+    top:91px;
     left:250px;
+}
+.order_done {
     display: none;
+    top: 345px;
+    left: 260px;
 }
-.table button {
-    margin: 5px;
-    margin-left: 465px;
-    
-}
-
 .diagram {
     display: none;
-    border: 2px solid rgb(31, 29, 29);
-    border-radius: 4px;
-    position:absolute;
-    top:10px;
-    left:10px;
+    top:130px;
+    left:1010px;
     width:500px;
     height:250px;
-    margin-left:1000px;
 }
-
 input {
     width: 70px;
 }
-
-.order_done {
-    position: absolute;
-    left: 255px;
-    top: 300px;
-    display: none;
+.style {
+    background-color: rgb(196, 191, 191);
     border: 2px solid rgb(31, 29, 29);
-    border-radius: 2px;
-    padding: 15px;
+    border-radius: 4px;
+    position: absolute;
 }
-

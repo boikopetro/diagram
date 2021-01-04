@@ -72,7 +72,7 @@ function randomInteger(min, max) {
 document.getElementById('auto_ordering').addEventListener('click',showAutoOrdering);
 let autoOrderingDisplay = true;
 function showAutoOrdering () {
-   const showHideAutoOrdering = document.querySelector('.table');
+   const showHideAutoOrdering = document.querySelector('.storage');
    if(autoOrderingDisplay) {
         showHideAutoOrdering.style.display = 'block'
         autoOrderingDisplay = false;
