@@ -8,8 +8,8 @@
 </head>
 <body>
 <header>
-    <button id="auto_ordering">Автозамовлення</button>
-    <button id="diagram_btn">Графік</button>
+    <button id="auto_ordering" class="btn">Автозамовлення</button>
+    <button id="diagram_btn" class="btn">Графік</button>
 </header>
 <div class="container">
 <aside>
@@ -57,8 +57,12 @@
             <td><input type="number"></td>
             <td><input type="number"></td>
         </tr>
-        <button id="order_done_btn" class="btn">Зберегти</button>
+        
     </table>
+    <p>К-сть днів повторення замовлення:
+        <input type="number">
+    </p>
+    <button id="order_done_btn" class="btn">Зберегти</button>
     </div>
 </main>
 </div>
@@ -89,8 +93,8 @@
             <td>...</td>
             <td>AA</td>
         </tr>
-        <button id="close_window" class="btn">Закрити</button>
     </table>
+    <button id="close_window" class="btn">Закрити</button>
 </div>
 <div class="diagram style">
     <canvas id="myChart"></canvas>  

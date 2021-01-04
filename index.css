@@ -4,8 +4,9 @@ body {
 }
 header {
     position: relative;
-    top: 55px;
+    top: 50px;
     left: 580px;
+    max-width: 200px;
 }
 header button {
     height: 30px;
@@ -35,7 +36,8 @@ td {
     border: 1px solid black;
 }
 .btn {
-    color: blue;
+    margin: 5px;
+    background-color: rgb(193, 199, 204);
 }
 .storage {
     display: none; 
@@ -44,7 +46,7 @@ td {
 }
 .order_done {
     display: none;
-    top: 345px;
+    top: 430px;
     left: 260px;
 }
 .diagram {
