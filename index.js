@@ -132,56 +132,57 @@ function orderCounter () {
 
 //--------------------------------Алгоритм середньої реалізації------------------------------------------------------
 
-//const arr = [65, 50, 43, 66, 5, 8, 35, 40, 100, 70, 10, 40, 47] // аналіз за 13 масяців
-
 function getRandomInt() {
     const randomArray = []
-    for ( let i = 0; i < 13; i++ ) {
+    for ( let i = 0; i < 12; i++ ) {
         randomArray.push(Math.floor(Math.random() * 100))
     }
-    return randomArray
+console.log("рандомний масив:   " + randomArray)
+    
+//const arr = [5, 0, 44, 43, 45, 64, 35, 46, 87, 76, 6, 8] // карантин
+//const arr = [4, 4, 66, 43, 45, 66, 35, 46, 87, 70, 700, 3] // разова продажа в карантин
+//const arr = [66, 89, 66, 43, 45, 66, 35, 46, 87, 70, 700, 55] // разова продажа
 
-}
-console.log("рандомний:   " + getRandomInt())
+//console.log("вхідний масив:   " + arr)
 
-const cloneArr = getRandomInt().map(el => el)
-
+const cloneArr = randomArray.map(el => el)
 const sortedArr = cloneArr.sort( (a,b) => a - b )
+//console.log("сортований   :" + sortedArr)
 
 for(let i = 0; i < 3; i++ ) {
     sortedArr.shift()
     sortedArr.pop()
 }
+//console.log("сортований масив після зрізу:   " + sortedArr)
 
-const lastYearCurrentMonth = Math.round((getRandomInt()[0] + getRandomInt()[1] + getRandomInt()[2] ) / 3);
-const lastMonth = Math.round((getRandomInt()[10] + getRandomInt()[11] + getRandomInt()[12] ) / 3);
+const diapason = [sortedArr.slice(0,1), sortedArr.slice(-1)]
+console.log('діапазон  : ' + diapason[0] + '-' + diapason[1])
+
+const lastYearCurrentMonth = Math.round((randomArray[0] + randomArray[1] ) / 2);
+const lastMonth = Math.round((randomArray[10] + randomArray[11]  ) / 2);
 const averageValue =  Math.round((lastYearCurrentMonth + lastMonth)/2);
 
-function counter () {
-
-    if(averageValue < sortedArr[0])  {
-        return  sortedArr[0]
+function testInvalidValue () {
+    const tallage = 20; // відсоток
+    if(averageValue <= sortedArr[0])  {
+        return  (Math.round((sortedArr[0]+(sortedArr[sortedArr.length-1]))/2))
     } 
-    if(averageValue > sortedArr[6])  {
-        return  sortedArr[6]
+    if(averageValue >= sortedArr[sortedArr.length-1])  {
+        return  sortedArr[sortedArr.length-1]
     } 
-    if(averageValue > sortedArr[0] && averageValue < sortedArr[6])  {
-        return  averageValue
+    if(averageValue >= sortedArr[0] && averageValue < sortedArr[sortedArr.length-1])  {
+        return  (Math.round(averageValue+(averageValue / 100 * tallage)))
     } 
     else return "false"
 }
 
-
-
 console.log("поточний місяць минулого року:   " + lastYearCurrentMonth)
 console.log("попередній місяць поточного року:   " + lastMonth)
 console.log("середнє значення:   " + averageValue)
+console.log(testInvalidValue())
 
-//console.log("вхідний:   " + arr)
 //console.log("тест на мутабельність(звичайний масив):    " + arr)
+//console.log("тест на мутабельність(рандомний масив):    " + randomArray)
 
-console.log("тест на мутабельність(рандомний масив):    " + getRandomInt())
-console.log("діапазон:   " + sortedArr)
-
-console.log(counter())
-
+}
+getRandomInt()
