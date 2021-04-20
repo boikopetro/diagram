@@ -130,3 +130,58 @@ function orderCounter () {
     }
 }
 
+//--------------------------------Алгоритм середньої реалізації------------------------------------------------------
+
+//const arr = [65, 50, 43, 66, 5, 8, 35, 40, 100, 70, 10, 40, 47] // аналіз за 13 масяців
+
+function getRandomInt() {
+    const randomArray = []
+    for ( let i = 0; i < 13; i++ ) {
+        randomArray.push(Math.floor(Math.random() * 100))
+    }
+    return randomArray
+
+}
+console.log("рандомний:   " + getRandomInt())
+
+const cloneArr = getRandomInt().map(el => el)
+
+const sortedArr = cloneArr.sort( (a,b) => a - b )
+
+for(let i = 0; i < 3; i++ ) {
+    sortedArr.shift()
+    sortedArr.pop()
+}
+
+const lastYearCurrentMonth = Math.round((getRandomInt()[0] + getRandomInt()[1] + getRandomInt()[2] ) / 3);
+const lastMonth = Math.round((getRandomInt()[10] + getRandomInt()[11] + getRandomInt()[12] ) / 3);
+const averageValue =  Math.round((lastYearCurrentMonth + lastMonth)/2);
+
+function counter () {
+
+    if(averageValue < sortedArr[0])  {
+        return  sortedArr[0]
+    } 
+    if(averageValue > sortedArr[6])  {
+        return  sortedArr[6]
+    } 
+    if(averageValue > sortedArr[0] && averageValue < sortedArr[6])  {
+        return  averageValue
+    } 
+    else return "false"
+}
+
+
+
+console.log("поточний місяць минулого року:   " + lastYearCurrentMonth)
+console.log("попередній місяць поточного року:   " + lastMonth)
+console.log("середнє значення:   " + averageValue)
+
+//console.log("вхідний:   " + arr)
+//console.log("тест на мутабельність(звичайний масив):    " + arr)
+
+console.log("тест на мутабельність(рандомний масив):    " + getRandomInt())
+console.log("діапазон:   " + sortedArr)
+
+console.log(counter())
+
